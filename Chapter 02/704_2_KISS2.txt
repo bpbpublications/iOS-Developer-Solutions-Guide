@@ -1,0 +1,9 @@
+func appVersion() -> String {
+guard let bundleInfo = Bundle.main.infoDictionary else { return ("") }
+return bundleInfo["CFBundleShortVersionString"] as? String ?? ""
+}
+
+func appBuild() -> String {
+guard let bundleInfo = Bundle.main.infoDictionary else { return ("") }
+return bundleInfo["CFBundleVersion"] as? String ?? ""
+}

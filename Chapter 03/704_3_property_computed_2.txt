@@ -1,0 +1,27 @@
+struct Rectangle  {
+
+    private var _height: Int
+
+    var height: Int {
+        get {
+            return _height
+        }
+        set(newValue) {
+            _height = newValue < 0 ? 0 : newValue
+        }
+    }
+    
+    init(height:Int) {
+        _height = height < 0 ? 0 : height
+    }
+}
+
+var rectangle = Rectangle(height:-10)
+print(rectangle.height) // Prints 0
+
+rectangle.height = 10
+print(rectangle.height) // Prints 10
+
+rectangle.height = -24
+print(rectangle.height) // Prints 0
+}

@@ -1,0 +1,14 @@
+func swap<T>(_ a: inout T, _ b: inout T) {
+    let c = a
+    a = b
+    b = c
+}
+
+var int_a = 2, int_b = 3
+swap(&int_a,&int_b)
+
+var string_a = "hello", string_b = "world"
+swap(&string_a,&string_b)
+
+var double_a = 2.0, double_b = 3.0
+swap(&double_a,&double_b)

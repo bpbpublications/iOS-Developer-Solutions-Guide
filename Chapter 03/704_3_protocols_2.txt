@@ -1,0 +1,25 @@
+class ViewModel {
+    var connection: DatabaseCoreData
+    init(connection: DatabaseCoreData) {
+        print("BusinessLogic initialized")
+        self.connection = connection
+    }
+    func listData() {
+        self.connection.listData()
+    }
+}
+
+class DatabaseSQLite {
+    func listData() {
+        print("listData called")
+    }
+}
+
+class DatabaseCoreData {
+    func listData() {
+        print("listData called")
+    }
+}
+
+var viewModel = ViewModel(connection:DatabaseCoreData())
+viewModel.listData()

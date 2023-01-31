@@ -1,0 +1,40 @@
+protocol Game {
+func startGame()
+func stopGame()
+func pauseGame()
+func saveData()
+func restoreData()
+
+func setDifficulty(_ difficulty: Int)
+func setNumberOfPlayers(_ players: Int)
+}
+
+class MazeGame: Game {
+func startGame() { }
+func stopGame() { }
+func pauseGame() { }
+func saveData() { }
+func restoreData() { }
+func setDifficulty(_ difficulty: Int) { }
+func setNumberOfPlayers(_ players: Int) { }
+}
+
+class PuzzleGame: Game {
+func startGame() { }
+func stopGame() { }
+func pauseGame() { }
+func saveData() { }
+func restoreData() { }
+func setDifficulty(_ difficulty: Int) { }
+func setNumberOfPlayers(_ players: Int) { }
+}
+
+class BrainGame: Game {
+func startGame() { }
+func stopGame() { }
+func pauseGame() { }
+func saveData() { }
+func restoreData() { }
+func setDifficulty(_ difficulty: Int) { }
+func setNumberOfPlayers(_ players: Int) { }
+}

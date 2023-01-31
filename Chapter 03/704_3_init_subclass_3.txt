@@ -1,0 +1,16 @@
+class SuperClass  {
+    required init() {
+        print("Super Class")
+    }
+}
+
+class SubClass: SuperClass {
+    required init() {
+        print("Sub Class")
+    }
+}
+
+let subclass = SubClass()
+// output: 
+// Sub Class
+// Super Class

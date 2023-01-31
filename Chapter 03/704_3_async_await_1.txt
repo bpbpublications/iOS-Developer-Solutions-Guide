@@ -1,0 +1,32 @@
+
+protocol MyDelegate {
+    func dataReceived(data:String)
+}
+
+class NetworkWrapper {
+    
+    var delegate: MyDelegate
+    
+    init(delegate:MyDelegate) {
+        self.delegate = delegate
+    }
+    
+    func getData() {
+        self.delegate.dataReceived(data: "Here is the data")
+    }
+}
+
+class ViewModel: MyDelegate {
+    
+    func getData() {
+        let network = NetworkWrapper(delegate: self)
+        network.getData()
+    }
+    
+    func dataReceived(data:String) {
+        print(data)
+    }
+}
+
+let viewModel = ViewModel()
+viewModel.getData()

@@ -1,0 +1,20 @@
+func myMap(_ list:[Int], transform:(Int) -> Int) -> [Int] {
+
+    var finalArray:[Int] = []
+
+    for number in list {
+        let square = transform(number)
+        finalArray.append(square)
+    }
+    return finalArray // final array with square of each number
+}
+
+let numbers = [1,2,3,4,5]
+
+let squares = myMap(numbers) { number in
+    return number*number
+}
+
+print(numbers) // [1, 2, 3, 4, 5]
+print(squares) // [1, 4, 9, 16, 25]
+print(numbers) // [1, 2, 3, 4, 5]

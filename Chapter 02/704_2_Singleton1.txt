@@ -1,0 +1,7 @@
+let urlSession = URLSession.shared // Shared URL Session
+let fileManager = FileManager.default // Default File Manager
+let defaults = UserDefaults.standard // Standard User Defaults
+let urlSession = URLSession.shared // Shared URL Session
+let fileManager = FileManager.default // Default File Manager
+let defaults = UserDefaults.standard // Standard User Defaults
+let paymentQueue = SKPaymentQueue.default() // Default Payment Queue

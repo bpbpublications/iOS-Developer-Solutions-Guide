@@ -1,0 +1,22 @@
+enum Gender { case male, female } 
+
+// structure 
+struct Person  {
+    var name: String
+    var gender: Gender
+}
+
+var p = Person(name:"John", gender:Gender.male)
+
+// class
+class User  {
+    var name: String
+    var gender: Gender
+    
+    init(name:String, gender: Gender) {
+        self.name = name
+        self.gender = gender
+    }
+}
+
+var u = User(name:"Tom", gender:Gender.male)

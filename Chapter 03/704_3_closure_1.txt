@@ -1,0 +1,20 @@
+doSomethingBig()
+
+func doSomethingBig() {
+    print("doing something big...")
+    success()
+    failure()
+}
+
+func success() {
+    print("success")
+}
+
+func failure() {
+    print("failure")
+}
+
+// output
+doing something big…
+success
+failure 

@@ -1,0 +1,24 @@
+protocol Shape {
+var area: Double { get }
+}
+
+struct Rectangle: Shape {
+let width: Double
+let height: Double
+var area: Double {
+return width*height
+}
+}
+
+struct Circle: Shape {
+let radius: Double
+var area: Double {
+return 3.14*radius*radius
+}
+}
+
+class AreaCalculator {
+func calculate(_ shape:Shape) -> Double {
+return shape.area
+}
+}

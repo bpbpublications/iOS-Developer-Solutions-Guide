@@ -1,0 +1,4 @@
+let n = <get value from the backend>
+for _ in 1...n {
+print("Hello")
+}

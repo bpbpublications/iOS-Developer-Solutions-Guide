@@ -1,0 +1,29 @@
+@propertyWrapper
+struct PositiveValue  {
+
+    private var value: Int
+
+    var wrappedValue: Int {
+        get { 
+            return value 
+        }
+        set(newValue) { 
+            value = newValue < 0 ? 0 : newValue 
+        }
+    }
+
+    init(wrappedValue:Int) {
+        value = wrappedValue < 0 ? 0 : wrappedValue
+    }
+}
+
+struct Rectangle  {
+
+    @PositiveValue var height: Int
+    @PositiveValue var width: Int
+
+    init(height:Int, width:Int) {
+        self.height = height
+        self.width = width
+    }
+}

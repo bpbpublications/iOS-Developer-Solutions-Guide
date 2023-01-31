@@ -1,0 +1,24 @@
+enum Gender { case male, female } 
+
+class User  {
+    var name: String
+    var gender: Gender
+
+    init?(name:String, gender: Gender) {
+    
+        if name.isEmpty {
+            return nil
+        }
+    
+        self.name = name
+        self.gender = gender
+    }
+}
+
+var user = User(name:"",gender:.male)
+
+if user != nil  {
+    print("User is initialized, please provide user name")
+} else {
+    print("User is not initialized")
+}

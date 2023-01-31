@@ -1,0 +1,11 @@
+func doSomethingBig(success: () -> (), failure: () -> () ) {
+    print("doing something big...")
+    success()
+    failure()
+}
+
+doSomethingBig(success: {
+    print("success")
+}, failure: {
+    print("failure")
+});

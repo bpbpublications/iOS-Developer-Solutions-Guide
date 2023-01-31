@@ -1,0 +1,28 @@
+class Library {
+var configuration: Configuration
+var os: OS
+init(configuration: Configuration, os:OS) { // 2 objects are injected here
+self.configuration = configuration
+self.os = os
+}
+}
+
+class Configuration {
+init(fileName: String) {
+print("Library Configured")
+}
+}
+
+class OS {
+init(os: String) {
+print("OS Selected")
+}
+}
+
+let configuration = Configuration(fileName: "config.txt")
+let os = OS(os:"macOS")
+let lib = Library(configuration:configuration, os:os)
+
+// output
+// Library Configured
+// OS Selected

@@ -1,0 +1,27 @@
+enum Gender { case male, female } 
+
+enum UserError: Error {
+    case InvalidUser
+}
+
+class User  {
+    var name: String
+    var gender: Gender
+
+    init(name:String, gender: Gender) throws {
+    
+        if name.isEmpty {
+            throw UserError.InvalidUser
+        }
+    
+        self.name = name
+        self.gender = gender
+    }
+}
+
+do {
+    let user = try User(name:"",gender:.male)
+    print(user.name)
+} catch let err {
+    print("Unable to create user \(err)")
+}

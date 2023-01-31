@@ -1,0 +1,27 @@
+func swapInt(_ a: inout Int, _ b: inout Int) {
+    let c = a
+    a = b
+    b = c
+}
+
+func swapString(_ a: inout String, _ b: inout String) {
+    let c = a
+    a = b
+    b = c
+}
+
+func swapDouble(_ a: inout Double, _ b: inout Double) {
+    let c = a
+    a = b
+    b = c
+}
+
+
+var int_a = 2, int_b = 3
+swapInt(&int_a,&int_b)
+
+var string_a = "hello", string_b = "world"
+swapString(&string_a,&string_b)
+
+var double_a = 2.0, double_b = 3.0
+swapDouble(&double_a,&double_b)

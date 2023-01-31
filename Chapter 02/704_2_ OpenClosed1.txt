@@ -1,0 +1,31 @@
+protocol Shape {
+}
+
+struct Rectangle: Shape {
+let width: Double
+let height: Double
+}
+
+class AreaCalculator {
+func calculate(_ shape:Shape) -> Double {
+if let rect = shape as? Rectangle {
+return rect.width * rect.height
+}
+return 0
+}
+protocol Shape {
+}
+
+struct Rectangle: Shape {
+let width: Double
+let height: Double
+}
+
+class AreaCalculator {
+func calculate(_ shape:Shape) -> Double {
+if let rect = shape as? Rectangle {
+return rect.width * rect.height
+}
+return 0
+}
+}

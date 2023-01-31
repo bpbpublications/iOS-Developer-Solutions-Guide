@@ -1,0 +1,11 @@
+func doSomethingBig(success: (String) -> (), failure: (Int) -> () ) {
+    print("doing something big...")
+    success("long task done successfully")
+    failure(1000)
+}
+
+doSomethingBig(success: { msg in
+    print("success: \(msg)")
+}, failure: { errorCode in
+    print("failure: error code = \(errorCode)")
+});

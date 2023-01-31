@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo My first script - Start
+mkdir myDir
+cd myDir
+touch myFile.txt 
+echo My first script - End

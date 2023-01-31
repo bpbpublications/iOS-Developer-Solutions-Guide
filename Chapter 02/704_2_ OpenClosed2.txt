@@ -1,0 +1,23 @@
+protocol Shape {
+}
+
+struct Rectangle: Shape {
+let width: Double
+let height: Double
+}
+
+struct Circle: Shape {
+let radius: Double
+}
+
+class AreaCalculator {
+func calculate(_ shape:Shape) -> Double {
+if let rect = shape as? Rectangle {
+return rect.width * rect.height
+}
+if let circle = shape as? Circle {
+return 3.14*circle.radius*circle.radius
+}
+return 0
+}
+}

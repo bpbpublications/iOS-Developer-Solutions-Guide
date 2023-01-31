@@ -1,0 +1,36 @@
+class Library {
+var configuration: Configuration?
+var os: OS?
+}
+
+class Configuration {
+init(fileName: String) {
+print("Library Configured")
+}
+}
+
+class OS {
+var name: String
+init(os: String) {
+self.name = os
+print("OS Selected")
+}
+}
+
+let configuration = Configuration(fileName: "config.txt")
+let os = OS(os:"macOS")
+let lib = Library()
+
+lib.configuration = configuration
+lib.os = os
+
+if lib.os != nil {
+print(lib.os!.name)
+} else {
+print("os not set")
+}
+
+// output
+// Library Configured
+// OS Selected
+// macOS

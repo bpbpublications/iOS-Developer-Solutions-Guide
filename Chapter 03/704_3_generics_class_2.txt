@@ -1,0 +1,22 @@
+class GenericArray<Element> {
+    var array:[Element] = []
+    func add(_ element: Element) {
+        array.append(element)
+    }
+    func list() -> [Element] {
+        return array
+    }
+}
+
+var intArray = GenericArray<Int>()
+intArray.add(2)
+intArray.add(3)
+intArray.add(4)
+print(intArray.list()) // [2, 3, 4]
+
+
+var stringArray = GenericArray<String>()
+stringArray.add("String 1")
+stringArray.add("String 2")
+stringArray.add("String 3")
+print(stringArray.list()) // ["String 1", "String 2", "String 3"]

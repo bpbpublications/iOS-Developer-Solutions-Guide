@@ -1,0 +1,6 @@
+@objc func openSwiftUIScreen() {
+    let swiftUIVC = UIHostingController(rootView: SwiftUIView())
+    self.navigationController?.pushViewController(swiftUIVC, animated: true)
+}
+
+

@@ -1,0 +1,14 @@
+var desc: String = "Original Description" {
+    willSet {
+        print("newValue: \(newValue), current value: \(desc)")
+    }
+    didSet {
+        print("oldValue: \(oldValue), current value: \(desc)")
+    }
+}
+print(desc)
+desc = "New Description"
+// output 
+Original Description
+newValue: New Description, current value: Original Description
+oldValue: Original Description, current value: New Description

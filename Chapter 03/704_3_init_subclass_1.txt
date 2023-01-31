@@ -1,0 +1,12 @@
+class SuperClass  {
+    required init() {
+        print("Super Class")
+    }
+}
+
+class SubClass: SuperClass {
+}
+
+let subclass = SubClass()
+// output
+// Super Class

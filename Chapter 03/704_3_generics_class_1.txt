@@ -1,0 +1,33 @@
+class IntArray {
+    var array:[Int] = [ ]
+    func add(_ element: Int) {
+        array.append(element)
+    }
+    func list() -> [Int] {
+        return array
+    }
+}
+
+
+class StringArray {
+    var array:[String] = [ ]
+    func add(_ element: String) {
+        array.append(element)
+    }
+    func list() -> [String] {
+        return array
+    }
+}
+
+var intArray = IntArray()
+intArray.add(2)
+intArray.add(3)
+intArray.add(4)
+print(intArray.list()) // [2, 3, 4]
+
+
+var stringArray = StringArray()
+stringArray.add("String 1")
+stringArray.add("String 2")
+stringArray.add("String 3")
+print(stringArray.list()) // ["String 1", "String 2", "String 3"]

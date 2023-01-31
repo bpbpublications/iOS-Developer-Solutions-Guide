@@ -1,0 +1,13 @@
+class MyClass {
+static let shared = MyClass() // One static variable
+private init() { // One private constructor
+print("called once")
+}
+}
+
+let obj1 = MyClass.shared
+let obj2 = MyClass.shared
+let obj3 = MyClass.shared
+
+// output:
+called once

@@ -1,0 +1,17 @@
+class Library {
+var configuration: Configuration
+init() {
+configuration = Configuration()
+}
+}
+
+class Configuration {
+init() {
+print("Library Configured")
+}
+}
+
+let lib = Library()
+
+// Output:
+// Library Configured

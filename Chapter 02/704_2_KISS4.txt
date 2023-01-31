@@ -1,0 +1,8 @@
+let names = ["Steve", "Bill", "Dennis", "Ken"]
+
+var upperNames = names.map { $0.uppercased() } // Shorter and cleaner way
+
+print(upperNames) 
+
+// output
+// ["STEVE", "BILL", "DENNIS", "KEN"]

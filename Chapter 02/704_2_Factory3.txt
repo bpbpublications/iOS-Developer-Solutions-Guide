@@ -1,0 +1,74 @@
+protocol Band {
+var bandName: String { get }
+func play()
+}
+
+class JazzBand : Band {
+var bandName: String {
+return "Jazz Band"
+}
+func play() {
+print("Playing JAZZ...")
+}
+}
+
+class ElectronicBand : Band {
+var bandName: String {
+return "Electronic Band"
+}
+func play() {
+print("Playing ELECTRONIC...")
+}
+}
+
+class RockBand : Band {
+var bandName: String {
+return "Electronic Band"
+}
+func play() {
+print("Playing ROCK...")
+}
+}
+
+class SoftBand : Band {
+var bandName: String {
+return "Soft Band"
+}
+func play() {
+print("Playing SOFT...")
+}
+}
+
+enum BandType {
+case JAZZ, ELECTRONIC, ROCK, SOFT
+}
+
+class Music {
+func play(forBand:BandType) {
+let band = BandFactory.createBand(forBand:forBand)
+band.play()
+}
+}
+
+class BandFactory {
+class func createBand(forBand: BandType) -> Band {
+let band:Band
+switch forBand {
+case .JAZZ:
+band = JazzBand()
+case .ELECTRONIC:
+band = ElectronicBand()
+case .ROCK:
+band = RockBand()
+case .SOFT:
+band = SoftBand()
+}
+return band
+}
+}
+
+let music = Music()
+music.play(forBand:.JAZZ)
+
+// output
+Playing JAZZ...

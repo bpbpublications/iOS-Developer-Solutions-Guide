@@ -1,0 +1,29 @@
+protocol Parser {
+func doParsing()
+}
+
+class JSONParser: Parser {
+func doParsing() {
+print("JSON Parsing done")
+}
+}
+
+class XMLParser: Parser {
+func doParsing() {
+print("XML Parsing done")
+}
+}
+
+class MyClass {
+func showParsedData(_ parser:Parser) {
+parser.doParsing()
+}
+}
+
+let obj = MyClass()
+obj.showParsedData(XMLParser())
+obj.showParsedData(JSONParser())
+
+// output
+// XML Parsing done
+// JSON Parsing done

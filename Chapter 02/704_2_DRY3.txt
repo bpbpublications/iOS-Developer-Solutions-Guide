@@ -1,0 +1,19 @@
+class Helper {
+
+static func roundButton(_ button:UIButton) {
+button.layer.cornerRadius = 10
+button.layer.shadowColor = UIColor.black.cgColor
+button.layer.shadowOffset = CGSize(width: 5, height: 5)
+button.layer.shadowRadius = 5
+button.layer.shadowOpacity = 0.28
+}
+
+static func versionAndBuild() -> String {
+let bundle = Bundle.main
+let dictionary = bundle.infoDictionary
+let version = dictionary!["CFBundleShortVersionString"] as? String
+let build = dictionary!["CFBundleVersion"] as? String
+return "Version \(version!) Build \(build!)"
+}
+
+}

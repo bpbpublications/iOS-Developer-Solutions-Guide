@@ -1,0 +1,17 @@
+// UIKit view: UIActivityIndicatorView
+struct UIKitActivityIndicator: UIViewRepresentable {  
+   func makeUIView(context: Context) -> UIActivityIndicatorView {
+       let v = UIActivityIndicatorView()
+       return v
+   }
+   func updateUIView(_ activityIndicator: UIActivityIndicatorView, context: Context){
+       activityIndicator.startAnimating()
+   }
+}
+
+// SwiftUI code using UIKitActivityIndicator() which is a UIKit view
+struct ContentView : View {
+   var body: some View {
+       UIKitActivityIndicator() // this view is actually UIKit view
+   }
+}

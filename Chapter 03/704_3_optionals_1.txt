@@ -1,0 +1,83 @@
+/// code 1
+
+let url = URL(string: "www.mycompany.com") // correct url string
+print(url!) // you will see www.mycompany.come
+
+/// code 2
+
+let url = URL(string: "www mycompany com") // incorrect url string
+print(url!) // you will get crash
+
+/// code 3
+
+let url = URL(string: "www.mycompany.com")
+
+if url != nil  {
+    print(url!)    
+} else {
+    // handle based on your application requirement
+}
+
+/// code 4
+
+if let url = URL(string: "www.mycompany.com") {
+    print(url)    
+} else {
+    // handle based on your application requirement
+}
+
+/// code 5
+
+guard let url = URL(string: "www.mycompany.com") else {
+    // handle based on your application requirement
+    fatalError("")
+}
+
+print(url)
+
+/// code 6
+
+if let url = URL(string: "www.mycompany.com") {
+    print(url) // url only accessible in this block
+}
+
+print(url) // url can not be accessible here, will give you error
+
+/// code 7
+
+guard let url = URL(string: "www.mycompany.com") else {
+    print(url) // url can not be accessible here, will give you error
+    fatalError()
+}
+
+print(url) // url is accessible here
+
+/// code 8
+
+let isInternetConnection = true
+
+// guard let with one additional condition
+guard let url = URL(string: "www.mycompany.com"), isInternetConnection else {
+fatalError("")
+}
+
+UIApplication.shared.openURL(url)
+
+// if let with one additional condition
+if let url = URL(string: "www.mycompany.com"), isInternetConnection {
+UIApplication.shared.openURL(url)
+}
+
+/// code 9
+
+// nil-coalescing with if-let
+let myURL = "coming from the server"
+if let url = URL(string:myURL) ?? URL(string:"www.mycompany.com") {
+print(url)
+}
+
+// nil-coalescing with guard-let
+let myURL = "coming from the server"
+guard let url = URL(string:myURL) ?? URL(string:"www.mycompany.com") else {return}
+print(url)
+

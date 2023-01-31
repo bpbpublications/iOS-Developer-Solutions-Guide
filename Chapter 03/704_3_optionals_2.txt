@@ -1,0 +1,53 @@
+/// Code 1
+
+struct Person {
+let name:String
+let address:Address? // optional
+}
+
+struct Address {
+let street:String
+let city:String? // optional
+}
+
+let address = Address(street:"Street 1", city:"San Rafael") // CITY IS PROVIDED
+let person = Person(name:"Mike", address:address)
+print(person.address!.city!) // NO CRASH
+
+
+/// Code 2
+
+let address = Address(street:"Street 1", city:nil) // CITY IS NIL
+let person = Person(name:"Mike", address:address)
+print(person.address!.city!) // CRASH
+
+
+/// Code 3
+
+if let address = person.address { // address unwrapping
+if let city = address.city { // city unwrapping
+print(city)
+} else {
+print("city not found") // city is nil
+}
+} else {
+print("add not found") // address is nil
+}
+
+/// Code 4
+
+if let city = person.address?.city {
+print(city)
+} else {
+print("city not found")
+}
+
+/// Code 5
+
+var person:String?
+
+if let p = person {
+print(p)
+} else {
+print("person not found")
+}

@@ -1,0 +1,19 @@
+enum Gender { case male, female } 
+ 
+struct Person  {
+    let name: String
+    let gender: Gender
+    
+    init(name:String) {
+        self.name = name
+        self.gender = .male
+    }
+    init(gender:Gender) {
+        self.name = "John"
+        self.gender = gender
+    }    
+}
+
+let p = Person(name:"John")
+let q = Person(gender:.male)
+let r = Person(name:"Tina", gender:.female)

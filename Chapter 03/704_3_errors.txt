@@ -1,0 +1,131 @@
+//// Code 1
+
+func divide(num1: Double, num2: Double) -> Double {
+    if (num2==0) {
+       print("Divide Error")
+       return 0
+    } else {
+        return num1/num2;
+    }
+}
+
+let answer = divide(num1:10, num2:0)
+print(answer)
+
+//// Code 2
+
+func divide(num1: Double, num2: Double) -> Double {
+    if (num1 == 0 && num2 == 0) {
+        print("Both number should not be zero")
+        return 0
+    } else if (num2==0) {
+       print("Divide Error")
+       return 0
+    } else {
+        return num1/num2;
+    }
+}
+
+let answer = divide(num1:0, num2:0)
+print(answer)
+
+
+//// Code 3
+
+enum DivisionResult {
+    case success(Double)
+    case failure(String)
+}
+
+func divide(num1: Double, num2: Double) -> DivisionResult {
+    if num2 == 0 {
+        return .failure("Divide Error")
+    }
+    return .success(num1/num2)
+}
+
+let answer = divide(num1:20, num2: 0)
+print(answer)
+
+
+//// Code 4
+
+enum DivisionResult {
+    case success(Double)
+    case failure(String)
+}
+
+func divide(num1: Double, num2: Double) -> DivisionResult {
+    
+    if num1 == 0 && num2 == 0 {
+        return .failure("Both numbers should not be zero")
+    } else if num2 == 0 {
+        return .failure("Divide Error")
+    } else if num1 < 0 && num2 < 0 {
+        return .failure("Please provide positive numbers only")
+    }
+    return .success(num1/num2)
+}
+
+var answer = divide(num1: 0, num2: 0)
+print(answer)
+answer = divide(num1: 10, num2: 0)
+print(answer)
+answer = divide(num1: -2, num2: -20)
+print(answer)
+answer = divide(num1: 20, num2: 10)
+print(answer)
+
+//// Code 5
+
+enum MathError: Error {
+    case divideError(String)
+    case zeroError(String)
+    case negativeError(String)
+}
+
+func divide(num1: Double, num2: Double) throws -> Double {
+    if num1 == 0 && num2 == 0 {
+        throw MathError.zeroError("Both number should not be zero")
+    } else if num2 == 0 {
+        throw MathError.divideError("Divide Error")
+    } else if num1 < 0 && num2 < 0 {
+        throw MathError.negativeError("Please provide positive numbers only")
+    }
+    return (num1/num2)
+}
+
+do {
+    let answer: Double = try divide(num1: 10, num2: 0)
+    print(answer)
+} catch let error {
+    print(error)
+}
+
+
+/// Code 6
+
+
+enum MathError <T>: Error {
+    case error(T)
+}
+
+func divide(num1: Double, num2: Double) throws -> Double {
+    if num1 == 0 && num2 == 0 {
+        throw MathError<String>.error("Both number should not be zero")
+    } else if num2 == 0 {
+        throw MathError<String>.error("Divide Error")
+    } else if num1 < 0 && num2 < 0 {
+        throw MathError<Int>.error(1000)
+    }
+    return (num1/num2)
+}
+
+do {
+    let answer: Double = try divide(num1: -10, num2: 0)
+    print(answer)
+} catch let error {
+    print(error)
+}
+
+

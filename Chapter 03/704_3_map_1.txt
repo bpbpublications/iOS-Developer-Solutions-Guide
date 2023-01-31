@@ -1,0 +1,5 @@
+let numbers = [1, 2, 3, 4]
+let squares = numbers.map { number in
+    return number*number
+}
+print(squares) // prints [1, 4, 9, 16]

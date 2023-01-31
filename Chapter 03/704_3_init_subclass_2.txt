@@ -1,0 +1,13 @@
+class SuperClass  {
+    required init() {
+        print("Super Class")
+    }
+}
+
+class SubClass: SuperClass {
+    init() {
+        print("Sub Class")
+    }
+}
+
+let subclass = SubClass() // error

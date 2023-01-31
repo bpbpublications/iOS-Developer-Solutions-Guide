@@ -1,0 +1,19 @@
+class Network {
+    func getData() async -> (String, Int) {
+        return ("Here is the data", 500)
+    }
+}
+
+class ViewModel {
+    func getData() {
+        let network = Network()
+        Task {
+            let data = await network.getData()
+            print(data.0)
+            print(data.1)
+        }
+    }
+}
+
+let viewModel = ViewModel()
+viewModel.getData()

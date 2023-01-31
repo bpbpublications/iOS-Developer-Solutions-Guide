@@ -1,0 +1,21 @@
+class Number {
+
+    // stored property
+    var num: Int
+    
+    // lazy stored property
+    lazy var square: Int = {
+        print("lazy property")
+        return num*num
+    }()
+    
+    // initializer
+    init(num:Int) {
+        print("object allocated")
+        self.num = num
+    }
+}
+
+let object = Number(num:3)
+
+print(object.square)

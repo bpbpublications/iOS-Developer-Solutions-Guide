@@ -1,0 +1,17 @@
+class Library {
+var configuration: Configuration
+init() {
+configuration = Configuration(fileName: "config.txt") // change 1
+}
+}
+
+class Configuration {
+init(fileName: String) { // change 2
+print("Library Configured")
+}
+}
+
+let lib = Library()
+
+// Output:
+// Library Configured

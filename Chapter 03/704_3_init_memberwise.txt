@@ -1,0 +1,8 @@
+enum Gender { case male, female } 
+ 
+struct Person  {
+    var name: String
+    var gender: Gender
+}
+
+var p = Person(name:"John", gender:Gender.male)

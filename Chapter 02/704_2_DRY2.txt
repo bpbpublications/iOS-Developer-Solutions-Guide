@@ -1,0 +1,16 @@
+func function1() {
+let bundle = Bundle.main
+let dictionary = bundle.infoDictionary
+let version = dictionary!["CFBundleShortVersionString"] as? String
+let build = dictionary!["CFBundleVersion"] as? String
+someLabel.text = "Version \(version!) Build \(build!)"
+}
+
+func function2() {
+let bundle = Bundle.main
+let dictionary = bundle.infoDictionary
+let version = dictionary!["CFBundleShortVersionString"] as? String
+let build = dictionary!["CFBundleVersion"] as? String
+let defaults = UserDefaults.standard
+defaults.setValue("Version \(version!) Build \(build!)", forKey: "ver")
+}

@@ -1,0 +1,10 @@
+func add(a: Int, b: Int) -> Int 
+{
+    return a + b
+}
+
+let num1 = 10;
+let num2 = 20;
+print("Before calling function \(num1) \(num2)")
+let answer = add(a:num1, b:num2)
+print("After calling function \(num1) \(num2)")

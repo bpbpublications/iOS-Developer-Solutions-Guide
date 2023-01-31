@@ -1,0 +1,17 @@
+class NetworkWrapper {
+    func getData(completionHandler:(String)->()) {
+        completionHandler("Here is the data")
+    }
+}
+
+class ViewModel {
+    func getData() {
+        let network = NetworkWrapper()
+        network.getData { data in
+            print(data)
+        }
+    }
+}
+
+let viewModel = ViewModel()
+viewModel.getData()

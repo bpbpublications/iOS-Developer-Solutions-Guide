@@ -1,0 +1,11 @@
+let names = ["Steve", "Bill", "Dennis", "Ken"]
+
+var upperNames = [String]()
+
+for name in names {
+upperNames.append(name.uppercased())
+}
+print(upperNames)
+
+// output
+// ["STEVE", "BILL", "DENNIS", "KEN"]

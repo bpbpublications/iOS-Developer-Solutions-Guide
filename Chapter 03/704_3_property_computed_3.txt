@@ -1,0 +1,28 @@
+struct Rectangle  {
+
+    private var _height: Int
+    private var _width: Int
+
+    var height: Int {
+        get {
+            return _height
+        }
+        set(newValue) {
+            _height = newValue < 0 ? 0 : newValue
+        }
+    }
+    
+    var width: Int {
+        get {
+            return _width
+        }
+        set(newValue) {
+            _width = newValue < 0 ? 0 : newValue
+        }
+    }
+    
+    init(height:Int, width:Int) {
+        _height = height < 0 ? 0 : height
+        _width = width < 0 ? 0 : width
+    }
+}
